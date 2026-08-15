@@ -1,4 +1,6 @@
 import './style.css'
+import {createHeader} from "./components/header/header.ts";
+import { createHero } from './components/hero/hero'
 
 const app = document.querySelector<HTMLDivElement>('#app')
 
@@ -9,8 +11,9 @@ if (!app) {
 const page = document.createElement('main')
 page.className = 'page'
 
-const heroSection = document.createElement('section')
-heroSection.className = 'hero'
+const header = createHeader()
+
+const heroSection = createHero()
 
 const contentSection = document.createElement('section')
 contentSection.className = 'content-section'
@@ -18,5 +21,5 @@ contentSection.className = 'content-section'
 const footer = document.createElement('footer')
 footer.className = 'footer'
 
-page.append(heroSection, contentSection, footer)
+page.append(header, heroSection, contentSection, footer)
 app.append(page)
