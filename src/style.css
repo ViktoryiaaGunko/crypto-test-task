@@ -45,3 +45,22 @@ video {
   margin: 0;
   font-size: clamp(32px, 6vw, 64px);
 }
+
+.page {
+  min-width: 320px;
+}
+
+.hero {
+  min-height: 1000px;
+  background-color: #031c39;
+}
+
+.content-section {
+  min-height: 1013px;
+  background-color: #031c39;
+}
+
+.footer {
+  min-height: 64px;
+  background-color: #031c39;
+}
