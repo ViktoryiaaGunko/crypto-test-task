@@ -1,5 +1,6 @@
 import './hero.css'
 import Arrow from '../../assets/images/Arrow.png'
+import Polygon from '../../assets/images/Polygon.png'
 
 export function createHero(header: HTMLElement): HTMLElement {
     const hero = document.createElement('section')
@@ -64,7 +65,21 @@ export function createHero(header: HTMLElement): HTMLElement {
     buttonLearn.append(buttonLearnText, buttonLearnArrow)
     buttonsBlock.append(buttonLearn)
 
+    const buttonPlay = document.createElement('button')
+    buttonPlay.className = 'hero__button hero__button--play'
+    buttonPlay.type = 'button'
 
+    const buttonPlayText = document.createElement('span')
+    buttonPlayText.className = 'hero__button-text'
+    buttonPlayText.textContent = 'Play Video'
+
+    const buttonPlayArrow = document.createElement('img')
+    buttonPlayArrow.className = 'hero__button-arrow'
+    buttonPlayArrow.src = Polygon
+    buttonPlayArrow.alt = ''
+
+    buttonPlay.append(buttonPlayText, buttonPlayArrow)
+    buttonsBlock.append(buttonPlay)
 
     left.append(titleBlock, description, buttonsBlock)
 
