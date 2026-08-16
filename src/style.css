@@ -52,10 +52,6 @@ video {
   min-width: 320px;
 }
 
-.hero {
-  min-height: 1000px;
-}
-
 .content-section {
   min-height: 1013px;
   background-color: #031c39;
@@ -64,4 +60,13 @@ video {
 .footer {
   min-height: 64px;
   background-color: #031c39;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+p {
+  margin: 0;
 }
