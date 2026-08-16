@@ -1,6 +1,7 @@
 import './hero.css'
 import Arrow from '../../assets/images/Arrow.png'
 import Polygon from '../../assets/images/Polygon.png'
+import Google from '../../assets/images/Google.png'
 
 export function createHero(header: HTMLElement): HTMLElement {
     const hero = document.createElement('section')
@@ -80,13 +81,91 @@ export function createHero(header: HTMLElement): HTMLElement {
 
     buttonPlay.append(buttonPlayText, buttonPlayArrow)
     buttonsBlock.append(buttonPlay)
-
     left.append(titleBlock, description, buttonsBlock)
 
-    const right = document.createElement('div')
-    right.className = 'hero__right'
+   const formBlock = document.createElement('div')
+    formBlock.className = 'hero__form-block'
 
-    container.append(left, right)
+    const formHeader = document.createElement('h2')
+    formHeader.className = 'hero__form-header'
+    formHeader.textContent = 'Online Banking'
+
+    const formSection = document.createElement('div')
+    formSection.className = 'hero__form-section'
+
+    const personalTab = document.createElement('button')
+    personalTab.className = 'hero__form-tab hero__form-tab--personal'
+    personalTab.type = 'button'
+    personalTab.textContent = 'Personal'
+
+    const businessTab = document.createElement('button')
+    businessTab.className = 'hero__form-tab hero__form-tab--business'
+    businessTab.type = 'button'
+    businessTab.textContent = 'Business'
+
+    const formTabs = document.createElement('div')
+    formTabs.className = 'hero__form-tabs'
+
+    formTabs.append(personalTab, businessTab)
+    personalTab.addEventListener('click', () => {
+        formTabs.classList.remove('hero__form-tabs--business')
+    })
+
+    businessTab.addEventListener('click', () => {
+        formTabs.classList.add('hero__form-tabs--business')
+    })
+
+    const formActions = document.createElement('div')
+    formActions.className = 'hero__form-actions'
+
+    const googleButton = document.createElement('button')
+    googleButton.className = 'hero__google-button'
+    googleButton.type = 'button'
+
+    const googleButtonContent = document.createElement('span')
+    googleButtonContent.className = 'hero__google-button-content'
+
+    const googleIcon = document.createElement('img')
+    googleIcon.className = 'hero__google-icon'
+    googleIcon.src = Google
+    googleIcon.alt = ''
+
+    const googleText = document.createElement('span')
+    googleText.className = 'hero__google-text'
+    googleText.textContent = 'Google'
+
+    googleButtonContent.append(googleIcon, googleText)
+    googleButton.append(googleButtonContent)
+
+    const journeyText = document.createElement('p')
+    journeyText.className = 'hero__journey-text'
+    journeyText.textContent = 'Start Your Journey Now!'
+
+    const divider = document.createElement('div')
+    divider.className = 'hero__form-divider'
+
+    const dividerText = document.createElement('span')
+    dividerText.className = 'hero__form-divider-text'
+    dividerText.textContent = 'or'
+
+    divider.append(dividerText)
+
+    const createAccountButton = document.createElement('button')
+    createAccountButton.className = 'hero__create-account-button'
+    createAccountButton.type = 'button'
+    createAccountButton.textContent = 'Create account'
+
+    formActions.append(
+        googleButton,
+        journeyText,
+        divider,
+        createAccountButton
+    )
+
+    formSection.append(formActions)
+    formBlock.append(formHeader, formTabs, formSection)
+
+    container.append(left, formBlock)
     content.append(container)
     hero.append(introVideo, bgVideo, header, content)
 

@@ -77,8 +77,8 @@
   height: 546px;
   margin: 150px auto 0;
 
-  display: grid;
-  grid-template-columns: 1167px 1fr;
+  display: flex;
+  justify-content: space-between;
 }
 
 .hero__left {
@@ -228,4 +228,186 @@
 
 .hero__button--play:hover .hero__button-text {
   color: #27005b;
+}
+
+.hero__form-block {
+  width: 425px;
+  height: 455px;
+  margin: 30px 0;
+  background: #27005b;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hero__form-header {
+  margin: 0;
+  padding: 30px 0;
+  font-family: 'Bruno Ace', sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+
+.hero__form-tabs {
+  display: flex;
+  width: 425px;
+  height: 47px;
+}
+
+.hero__form-tab {
+  width: 50%;
+  height: 47px;
+  padding: 11px 56px;
+  box-sizing: border-box;
+  border: 0;
+
+  font-family: 'Bruno Ace', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  white-space: nowrap;
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.hero__form-tab--personal {
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  color: #27005b;
+}
+
+.hero__form-tab--business {
+  border-radius: 10px 10px 10px 10px;
+  background: #27005b;
+  color: #fff;
+}
+
+.hero__form-tabs--business .hero__form-tab--personal {
+  background: #27005b;
+  color: #fff;
+}
+
+.hero__form-tabs--business .hero__form-tab--business {
+  background: #fff;
+  color: #27005b;
+}
+
+.hero__form-section {
+  width: 425px;
+  height: 325px;
+  margin-top: -9px;
+  padding-top: 9px;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+
+.hero__form-actions {
+  width: 345px;
+  height: 228px;
+  margin-top: 50px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.hero__google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 346px;
+  height: 48px;
+  padding: 10px 0;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 5px;
+  background: #bdab6e;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.hero__google-button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.hero__google-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.hero__google-text {
+  font-family: 'Bruno Ace', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  transition: color 0.25s ease;
+}
+
+.hero__google-button:hover {
+  border: 1px solid #bdab6e;
+  background: transparent;
+}
+
+.hero__google-button:hover .hero__google-text {
+  color: #bdab6e;
+}
+
+.hero__journey-text {
+  margin: 30px 0 0;
+  font-family: 'Bruno Ace', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: #000;
+}
+
+.hero__form-divider {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.hero__form-divider::before,
+.hero__form-divider::after {
+  content: '';
+  width: 134px;
+  height: 0;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.hero__form-divider-text {
+  margin: 0 27px;
+  font-family: 'Bruno Ace', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.hero__create-account-button {
+  width: 345px;
+  height: 48px;
+  margin-top: 30px;
+  padding: 10px 0;
+  box-sizing: border-box;
+  border: 1px solid #bdab6e;
+  border-radius: 5px;
+  background: transparent;
+
+  font-family: 'Bruno Ace', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #bdab6e;
+  cursor: pointer;
 }
