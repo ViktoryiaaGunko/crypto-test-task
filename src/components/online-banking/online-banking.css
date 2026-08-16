@@ -1,0 +1,9 @@
+.online-banking {
+  width: 100%;
+  height: 1013px;
+  background: #031c39;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
