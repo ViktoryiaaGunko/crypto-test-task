@@ -2,46 +2,28 @@
   width: 100%;
   height: 1013px;
   background: #031c39;
-
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .online-banking__container {
   position: relative;
   width: 1773px;
   height: 893px;
+  margin: 60px 74px 60px 73px ;
 }
 
 .online-banking__content {
-  position: absolute;
-  top: 64px;
-  left: 68px;
   width: 1579px;
   height: 764px;
-
-  /* Больше не центрируем колонки */
-  display: block;
-}
-
-.online-banking__middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 764px;
-  height: 764px;
-  transform: translate(-50%, -50%);
+  margin: 64px 126px 65px 68px;
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 0;
 }
 
 .online-banking__left {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 432px;
   height: 100%;
 
@@ -49,12 +31,16 @@
   flex-direction: column;
   justify-content: center;
   gap: 30px;
+  align-items: flex-end;
+}
+
+.online-banking__middle {
+  width: 764px;
+  height: 764px;
+  position: relative;
 }
 
 .online-banking__right {
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 373px;
   height: 100%;
 
@@ -62,6 +48,16 @@
   flex-direction: column;
   justify-content: center;
   gap: 30px;
+}
+
+.online-banking__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
 }
 
 .online-banking__badge {
@@ -145,6 +141,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
   text-align: center;
   z-index: 10;
 }
@@ -152,19 +153,57 @@
 .online-banking__title {
   font-family: 'Bruno Ace', sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 32px;
+  text-transform: uppercase;
   color: #fff;
-  margin-bottom: 16px;
 }
 
-.online-banking__select {
+.online-banking__button {
+  border: 1px solid #27005b;
+  border-radius: 5px;
+  padding: 10px 0 10px 20px;
+  width: 346px;
+  height: 48px;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.online-banking__button-text {
   font-family: 'Bruno Ace', sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
+  color: #27005b;
+  margin-left: 45.5px;
+
+  display: flex;
+  align-items: center;
+}
+
+.online-banking__button-arrow {
+  width: 25px;
+  height: 25px;
+  margin-left: 12px;
+
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.online-banking__button:hover,
+.online-banking__button:active {
+  background: #bdab6e;
+}
+
+.online-banking__button:hover .online-banking__button-text,
+.online-banking__button:active .online-banking__button-text {
   color: #fff;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  padding: 8px 16px;
-  cursor: pointer;
+}
+
+.online-banking__button:hover .online-banking__button-arrow,
+.online-banking__button:active .online-banking__button-arrow {
+  transform: rotate(90deg);
+  filter: brightness(0) invert(1);
 }

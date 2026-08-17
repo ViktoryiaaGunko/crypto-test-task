@@ -9,6 +9,7 @@ import midnightImg from '../../assets/images/Midnight.png'
 import dogecoinImg from '../../assets/images/Dogecoin.png'
 import suiImg from '../../assets/images/Sui.png'
 import tetherImg from '../../assets/images/Tether.png'
+import arrowImg from '../../assets/images/weui_arrow-filled.png'
 
 export function createOnlineBanking(): HTMLElement {
     const section = document.createElement('section')
@@ -26,6 +27,9 @@ export function createOnlineBanking(): HTMLElement {
     const middle = document.createElement('div')
     middle.className = 'online-banking__middle'
 
+    const right = document.createElement('div')
+    right.className = 'online-banking__right'
+
     const outerCircle = document.createElement('div')
     outerCircle.className = 'online-banking__circle online-banking__circle--outer'
 
@@ -35,24 +39,25 @@ export function createOnlineBanking(): HTMLElement {
     const innerCircle = document.createElement('div')
     innerCircle.className = 'online-banking__circle online-banking__circle--inner'
 
+    middleCircle.append(outerCircle)
+    innerCircle.append(middleCircle)
+    middle.append(innerCircle)
+
     const centerContent = document.createElement('div')
     centerContent.className = 'online-banking__center-content'
     centerContent.innerHTML = `
-        <div class="online-banking__title">Твоя надпись</div>
-        <select class="online-banking__select">
-            <option>Bitcoin</option>
-            <option>Ethereum</option>
-            <option>Solana</option>
-        </select>
+        <div class="online-banking__title">Online Banking</div>
+        <button class="online-banking__button">
+            <span class="online-banking__button-text">Add a Cryptocurrency</span>
+            <img class="online-banking__button-arrow" src="${arrowImg}" alt="">
+        </button>
     `
 
-    innerCircle.append(centerContent)
-    middleCircle.append(innerCircle)
-    outerCircle.append(middleCircle)
-    middle.append(outerCircle)
+    middle.append(centerContent)
 
-    const right = document.createElement('div')
-    right.className = 'online-banking__right'
+    content.append(left, middle, right)
+    container.append(content)
+    section.append(container)
 
     const leftBadges = [
         { src: bitcoinImg, name: 'Bitcoin', value: '$87,965.62' },
@@ -97,10 +102,6 @@ export function createOnlineBanking(): HTMLElement {
 
     leftBadges.forEach(data => left.append(createLeftBadge(data)))
     rightBadges.forEach(data => right.append(createRightBadge(data)))
-
-    content.append(left, middle, right)
-    container.append(content)
-    section.append(container)
 
     return section
 }
