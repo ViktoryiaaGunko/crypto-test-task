@@ -7,3 +7,77 @@
   align-items: center;
   justify-content: center;
 }
+
+.online-banking__container {
+  position: relative;
+  width: 1773px;
+  height: 893px;
+}
+
+.online-banking__content {
+  position: absolute;
+  top: 64px;
+  left: 68px;
+  width: 1579px;
+  height: 764px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.online-banking__middle {
+  width: 764px;
+  height: 764px;
+  /* background: rgba(255,255,255,0.05);  для отладки */
+}
+
+.online-banking__left,
+.online-banking__right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.online-banking__left {
+  width: 432px;
+}
+
+.online-banking__right {
+  width: 373px;
+}
+
+.online-banking__badge {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  height: 41px;
+  white-space: nowrap;
+}
+
+.online-banking__icon {
+  height: 41px;
+  display: flex;
+  align-items: center;
+}
+
+.online-banking__icon img {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+.online-banking__text {
+  font-family: 'Bruno Ace', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+}
+
+.online-banking__value {
+  font-family: 'Bruno Ace', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+}
