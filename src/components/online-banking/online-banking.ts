@@ -1,4 +1,14 @@
 import './online-banking.css'
+import bitcoinImg from '../../assets/images/Bitcoin.png'
+import ethereumImg from '../../assets/images/Ethereum.png'
+import solanaImg from '../../assets/images/Solana.png'
+import xrpImg from '../../assets/images/XRP.png'
+import usdCoinImg from '../../assets/images/USD Coin.png'
+import binanceImg from '../../assets/images/Binance Coin.png'
+import midnightImg from '../../assets/images/Midnight.png'
+import dogecoinImg from '../../assets/images/Dogecoin.png'
+import suiImg from '../../assets/images/Sui.png'
+import tetherImg from '../../assets/images/Tether.png'
 
 export function createOnlineBanking(): HTMLElement {
     const section = document.createElement('section')
@@ -16,22 +26,47 @@ export function createOnlineBanking(): HTMLElement {
     const middle = document.createElement('div')
     middle.className = 'online-banking__middle'
 
+    const outerCircle = document.createElement('div')
+    outerCircle.className = 'online-banking__circle online-banking__circle--outer'
+
+    const middleCircle = document.createElement('div')
+    middleCircle.className = 'online-banking__circle online-banking__circle--middle'
+
+    const innerCircle = document.createElement('div')
+    innerCircle.className = 'online-banking__circle online-banking__circle--inner'
+
+    const centerContent = document.createElement('div')
+    centerContent.className = 'online-banking__center-content'
+    centerContent.innerHTML = `
+        <div class="online-banking__title">Твоя надпись</div>
+        <select class="online-banking__select">
+            <option>Bitcoin</option>
+            <option>Ethereum</option>
+            <option>Solana</option>
+        </select>
+    `
+
+    innerCircle.append(centerContent)
+    middleCircle.append(innerCircle)
+    outerCircle.append(middleCircle)
+    middle.append(outerCircle)
+
     const right = document.createElement('div')
     right.className = 'online-banking__right'
 
     const leftBadges = [
-        { src: 'assets/images/Bitcoin.png', name: 'Bitcoin', value: '$87,965.62' },
-        { src: 'assets/images/Ethereum.png', name: 'Ethereum', value: '$2,950.04' },
-        { src: 'assets/images/Solana.png', name: 'Solana', value: '$124.53' },
-        { src: 'assets/images/XRP.png', name: 'XRP', value: '$1.862' },
-        { src: 'assets/images/USD Coin.png', name: 'USD Coin', value: '$0.9997' },
+        { src: bitcoinImg, name: 'Bitcoin', value: '$87,965.62' },
+        { src: ethereumImg, name: 'Ethereum', value: '$2,950.04' },
+        { src: solanaImg, name: 'Solana', value: '$124.53' },
+        { src: xrpImg, name: 'XRP', value: '$1.862' },
+        { src: usdCoinImg, name: 'USD Coin', value: '$0.9997' },
     ]
     const rightBadges = [
-        { src: 'assets/images/Binance Coin.png', name: 'Binance Coin', value: '$844.91' },
-        { src: 'assets/images/Midnight.png',   name: 'Midnight', value: '$0.06398' },
-        { src: 'assets/images/Dogecoin.png', name: 'Dogecoin', value: '$0.1278' },
-        { src: 'assets/images/Sui.png',    name: 'Sui', value: '$1.427' },
-        { src: 'assets/images/Tether.png',  name: 'Tether', value: '$1.000' },
+        { src: binanceImg, name: 'Binance Coin', value: '$844.91' },
+        { src: midnightImg, name: 'Midnight', value: '$0.06398' },
+        { src: dogecoinImg, name: 'Dogecoin', value: '$0.1278' },
+        { src: suiImg, name: 'Sui', value: '$1.427' },
+        { src: tetherImg, name: 'Tether', value: '$1.000' },
     ]
 
     function createLeftBadge({ src, name, value }: { src: string; name: string; value: string }) {
@@ -39,10 +74,10 @@ export function createOnlineBanking(): HTMLElement {
         badge.className = 'online-banking__badge'
         badge.innerHTML = `
             <div class="online-banking__value">${value}</div>
+            <div class="online-banking__text">${name}</div>
             <div class="online-banking__icon">
                 <img src="${src}" alt="">
             </div>
-            <div class="online-banking__text">${name}</div>
         `
         return badge
     }

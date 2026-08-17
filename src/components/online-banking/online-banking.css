@@ -21,31 +21,47 @@
   width: 1579px;
   height: 764px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
+  /* Больше не центрируем колонки */
+  display: block;
 }
 
 .online-banking__middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 764px;
   height: 764px;
-  /* background: rgba(255,255,255,0.05);  для отладки */
-}
+  transform: translate(-50%, -50%);
 
-.online-banking__left,
-.online-banking__right {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
+  align-items: center;
+  justify-content: center;
 }
 
 .online-banking__left {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 432px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
 }
 
 .online-banking__right {
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 373px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
 }
 
 .online-banking__badge {
@@ -80,4 +96,75 @@
   font-weight: 400;
   font-size: 18px;
   color: #fff;
+}
+
+.online-banking__circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.online-banking__circle--outer {
+  width: 764px;
+  height: 764px;
+  background-image: url('../../assets/images/Ellipse-3.png');
+  animation: spinRight 20s linear infinite;
+}
+
+.online-banking__circle--middle {
+  width: 672px;
+  height: 672px;
+  background-image: url('../../assets/images/Ellipse-2.png');
+  animation: spinLeft 15s linear infinite;
+}
+
+.online-banking__circle--inner {
+  width: 594px;
+  height: 594px;
+  background-image: url('../../assets/images/Ellipse-1.png');
+  animation: spinRight 10s linear infinite;
+}
+
+@keyframes spinRight {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes spinLeft {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to   { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+.online-banking__center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  z-index: 10;
+}
+
+.online-banking__title {
+  font-family: 'Bruno Ace', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.online-banking__select {
+  font-family: 'Bruno Ace', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
 }
