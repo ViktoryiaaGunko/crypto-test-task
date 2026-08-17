@@ -1,4 +1,8 @@
 .header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+
   height: 104px;
   padding: 0 80px;
   display: flex;
